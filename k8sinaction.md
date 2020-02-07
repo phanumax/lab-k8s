@@ -11,7 +11,7 @@ $ kubectl get pods
 ```
 $ kubectl get ReplicationController
 ```
-# Increasing the desired repplica count
+# Increasing the desired replica count
 ```
 $ kubectl scale rc kubia --replicas=3
 ```
