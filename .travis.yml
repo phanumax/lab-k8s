@@ -4,3 +4,6 @@ services:
 
 before_install:
   - docker build -t phanumax/lab-k8s -f Dockerfile.dev .
+
+script:
+  - docker run phanumax/lab-k8s npm run test
