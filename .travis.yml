@@ -1,13 +1,14 @@
-language: generic
 sudo: required
+language: generic
+os: linux
 services:
   - docker
 
 before_install:
   - docker build -t phanumax/lab-k8s -f Dockerfile.dev .
 
-script:
-  - docker run phanumax/lab-k8s
+install:
+  - docker run -d -p 8080:8080 --name kubia-http phanumax/kubia
 
-after_script:
-  - docker images
+script:
+  - docker ps | grep -q kubia 
