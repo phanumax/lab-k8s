@@ -6,8 +6,6 @@ services:
 
 before_install:
   - docker build -t phanumax/lab-k8s -f Dockerfile.dev .
-
-install:
   - docker run -d -p 8080:8080 --name kubia-http phanumax/kubia
 
 script:
